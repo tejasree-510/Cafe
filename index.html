@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee</title>
+
+    <!-- SWIPER -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <!-- Font Awesome CDN Link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Custom CSS File Link  -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div id="menu-btn" class="fas fa-bars"></div>
+
+        <a href="#" class="logo"> ☕coffee <i class="fas fa-mug-hot"></i></a>
+
+        <nav class="navbar">
+            <a href="#home">home</a>
+            <a href="#about">about</a>
+            <a href="#menu">menu</a>
+            <a href="#review">review</a>
+            <a href="#book">book</a>
+        </nav>
+
+        <a href="#" class="btn">book a table</a>
+    </header>
+
+    <!-- HOME -->
+    <section class="home" id="home">
+        <div class="row">
+            <div class="content">
+                <h3>fresh coffee in the morning</h3>
+                <a href="#" class="btn">buy one now</a>
+            </div>
+
+            <div class="image">
+                <img src="hero-coffee.jpeg" class="main-home-image" alt="">
+            </div>
+        </div>
+
+        <div class="image-slider">
+            <img src="home-img-1.png" alt="">
+            <img src="home-img-2.png" alt="">
+            <img src="home-img-3.png" alt="">
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+   <section class="about" id="about">
+  <h1 class="heading">about us <span>why choose us</span></h1>
+
+  <div class="row">
+    <div class="image">
+      <img src="about-coffee.png" alt="">
+    </div>
+
+    <div class="content">
+      <h3 class="title">what's make our coffee special!</h3>
+      <p>
+        Crafted from 100% Arabica beans, Starbucks Blonde Espresso is lightly roasted to highlight its mellow body, smooth finish, and delicate flavour profile.
+      </p>
+
+      <!-- Hidden content -->
+      <div id="moreText" style="display: none;">
+        <p>Our coffee is sourced ethically from sustainable farms, ensuring the best flavor while supporting communities. Each batch is roasted to perfection and brewed by skilled baristas who are passionate about every cup they serve.</p>
+        <p>From seasonal blends to classic favorites, we offer something for every coffee lover. Visit any of our branches or enjoy a delivery right to your doorstep.</p>
+      </div>
+
+      <!-- Button to show/hide more -->
+      <a href="#" class="btn" onclick="toggleMore(event)">Read More</a>
+
+      <div class="icons-container">
+        <div class="icons">
+          <img src="about-icon-1.png" alt="">
+          <h3>Quality ☕ Coffee</h3>
+        </div>
+        <div class="icons">
+          <img src="about-icon-2.png" alt=""><br>
+         <a href="#branches-footer" class="btn">our 🏦 branches</a>
+        </div>
+        <div class="icons">
+          <img src="about-icon-3.png" alt="">
+          <h3>Free 🚚 Delivery</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    <!-- MENU -->
+     <style>
+  #order-response {
+    display: none;
+    text-align: center;
+    margin: 20px 0;
+    color: green;
+    font-weight: bold;
+    font-size: 1.5rem;       /* Approximately 24px */
+    line-height: 1.2;
+  }
+</style>
+  <section class="menu" id="menu">
+
+  <h1 class="heading">our menu <span>popular menu</span></h1>
+
+  <div class="box-container">
+    <!-- Order Response Message -->
+    <div id="order-response"
+         style="display:none; text-align:center; margin:20px 0; color:green; font-weight:bold; font-size:1.5rem;">
+      Thank you for ordering. Your <span id="coffee-name"></span> will be ready in 2 minutes.
+    </div>
+
+    <!-- Coffee Items -->
+    <!-- 1. Coffee -->
+    <div class="box">
+      <img src="menu-1.jpg" alt="Classic Brewed Coffee">
+      <div class="content">
+        <h3>Coffee</h3>
+        <p>Classic brewed coffee, rich and smooth – the perfect daily pick‑me‑up.</p>
+        <span>$8.99</span>
+        <button class="order-btn">Order Now</button>
+      </div>
+    </div>
+    <!-- 2. Flat White -->
+    <div class="box">
+      <img src="menu-2.png" alt="Flat White">
+      <div class="content">
+        <h3>Flat White</h3>
+        <p>Espresso with steamed milk and velvety microfoam, stronger than a latte.</p>
+        <span>$5.25</span>
+        <button class="order-btn">Order Now</button>
+      </div>
+    </div>
+    <!-- 3. Cappuccino -->
+    <div class="box">
+      <img src="menu-3.png" alt="Cappuccino">
+      <div class="content">
+        <h3>Cappuccino</h3>
+        <p>Equal parts espresso, steamed milk, and foam—a classic Italian favorite.</p>
+        <span>$3.50</span>
+        <button class="order-btn">Order Now</button>
+      </div>
+    </div>
+    <!-- 4. Café au lait -->
+    <div class="box">
+      <img src="menu-4.png" alt="Café au lait">
+      <div class="content">
+        <h3>Café au lait</h3>
+        <p>Brewed coffee with hot milk—French-style, often served for breakfast.</p>
+        <span>$5.00</span>
+        <button class="order-btn">Order Now</button>
+      </div>
+    </div>
+    <!-- 5. Americano -->
+    <div class="box">
+      <img src="menu-5.png" alt="Americano">
+      <div class="content">
+        <h3>Americano</h3>
+        <p>Espresso diluted with hot water for a smooth, bold flavor.</p>
+        <span>$7.99</span>
+        <button class="order-btn">Order Now</button>
+      </div>
+    </div>
+    <!-- 6. Affogato -->
+    <div class="box">
+      <img src="menu-6.png" alt="Affogato">
+      <div class="content">
+        <h3>Affogato</h3>
+        <p>Hot espresso “drowned” over vanilla ice cream—dessert in a cup.</p>
+        <span>$8.99</span>
+        <button class="order-btn">Order Now</button>
+      </div>
+    </div>
+    <!-- 7. Vanilla Latte -->
+    <div class="box">
+      <img src="menu-7.png" alt="Vanilla Latte">
+      <div class="content">
+        <h3>Vanilla Latte</h3>
+        <p>Espresso with steamed milk and creamy vanilla syrup.</p>
+        <span>$5.50</span>
+        <button class="order-btn">Order Now</button>
+      </div>
+    </div>
+    <!-- 8. Caramel Macchiato -->
+    <div class="box">
+      <img src="menu-8.png" alt="Caramel Macchiato">
+      <div class="content">
+        <h3>Caramel Macchiato</h3>
+        <p>Espresso blended with steamed milk and topped with caramel.</p>
+        <span>$5.99</span>
+        <button class="order-btn">Order Now</button>
+      </div>
+    </div>
+    <!-- 9. Hazelnut Coffee -->
+    <div class="box">
+      <img src="menu-9.jpeg" alt="Hazelnut Coffee">
+      <div class="content">
+        <h3>Hazelnut Coffee</h3>
+        <p>Nutty, aromatic—and a true delight.</p>
+        <span>$5.75</span>
+        <button class="order-btn">Order Now</button>
+      </div>
+    </div>
+    <!-- 10. Mocha -->
+    <div class="box">
+      <img src="menu-10.jpeg" alt="Mocha">
+      <div class="content">
+        <h3>Mocha</h3>
+        <p>Espresso mixed with steamed milk and rich chocolate.</p>
+        <span>$5.25</span>
+        <button class="order-btn">Order Now</button>
+      </div>
+    </div>
+    <!-- 11. Pumpkin Spice Latte -->
+    <div class="box">
+      <img src="menu-11.jpg" alt="Pumpkin Spice Latte">
+      <div class="content">
+        <h3>Pumpkin Spice Latte</h3>
+        <p>Seasonal favorite with cinnamon, nutmeg, and clove.</p>
+        <span>$6.25</span>
+        <button class="order-btn">Order Now</button>
+      </div>
+    </div>
+    <!-- 12. Masala Coffee -->
+    <div class="box">
+      <img src="menu-12.png" alt="Masala Coffee">
+      <div class="content">
+        <h3>Masala Coffee</h3>
+        <p>Warm cinnamon-flavored brew with steamed milk and spices.</p>
+        <span>$5.85</span>
+        <button class="order-btn">Order Now</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- REVIEW -->
+    <section class="review" id="review">
+  <h1 class="heading">reviews <span>what our customers say</span></h1>
+
+  <div class="swiper review-slider">
+    <div class="swiper-wrapper">
+
+      <div class="swiper-slide box">
+        <i class="fas fa-quote-left"></i>
+        <img src="pic-1.png" alt="Customer profile picture 1">
+        <p>Best coffee I've ever had! The ambiance is perfect for relaxing and catching up with friends.</p>
+        <div class="stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <h3>Sophia Williams</h3>
+        <span>Satisfied Customer</span>
+      </div>
+
+      <div class="swiper-slide box">
+        <i class="fas fa-quote-left"></i>
+        <img src="pic-2.png" alt="Customer profile picture 2">
+        <p>Quick service and great taste. I love their hazelnut coffee – smooth and aromatic every time.</p>
+        <div class="stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <h3>Arjun Patel</h3>
+        <span>Loyal Guest</span>
+      </div>
+
+      <div class="swiper-slide box">
+        <i class="fas fa-quote-left"></i>
+        <img src="pic-3.png" alt="Customer profile picture 3">
+        <p>Always my first choice when it comes to a good latte. Great service and lovely staff.</p>
+        <div class="stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+        </div>
+        <h3>Emma Rodriguez</h3>
+        <span>Regular Visitor</span>
+      </div>
+
+      <div class="swiper-slide box">
+        <i class="fas fa-quote-left"></i>
+        <img src="pic-4.png" alt="Customer profile picture 4">
+        <p>The café has a cozy vibe. Their pumpkin spice latte is to die for during the fall season!</p>
+        <div class="stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          <i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <h3>Ravi Mehta</h3>
+        <span>Happy Customer</span>
+      </div>
+
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+
+   <section class="book" id="book">
+  <h1 class="heading">Booking</h1>
+  <h1 class="heading">Reserve a table</h1>
+  <form id="reserveForm" method="post">
+    <div class="input-group">
+      <input type="text" placeholder="Your Full Name" class="box" name="name" required>
+      <input type="email" placeholder="Your Email Address" class="box" name="email" required>
+    </div>
+    <div class="input-group">
+      <input type="tel" placeholder="Phone Number" class="box" name="phone" required>
+      <input type="date" class="box" name="date" required>
+    </div>
+    <textarea placeholder="Any special request? (Optional)" class="box" name="requests" rows="5"></textarea>
+    <input type="submit" value="Reserve Now" class="btn">
+  </form>
+  <div id="confirmation" class="confirmation-message" style="display:none;">
+    Thank you, <span id="userName"></span>! Your table has been reserved for <span id="reservationDate"></span>. We’ve also sent a confirmation to <span id="userEmail"></span>.
+  </div>
+</section>
+
+
+    <!-- FOOTER -->
+  
+       <section class="footer" id="branches-footer">
+  <div class="box-container">
+
+    <div class="box">
+      <h3>our branches</h3>
+      <a href="#"><i class="fas fa-arrow-right"></i> India</a>
+      <a href="#"><i class="fas fa-arrow-right"></i> USA</a>
+      <a href="#"><i class="fas fa-arrow-right"></i> France</a>
+      <a href="#"><i class="fas fa-arrow-right"></i> Africa</a>
+      <a href="#"><i class="fas fa-arrow-right"></i> Japan</a>
+    </div>
+
+    <div class="box">
+      <h3>quick links</h3>
+      <a href="#home"><i class="fas fa-arrow-right"></i> Home</a>
+      <a href="#about"><i class="fas fa-arrow-right"></i> About</a>
+      <a href="#menu"><i class="fas fa-arrow-right"></i> Menu</a>
+      <a href="#review"><i class="fas fa-arrow-right"></i> Review</a>
+      <a href="#book"><i class="fas fa-arrow-right"></i> Book</a>
+    </div>
+
+    <div class="box">
+      <h3>contact info</h3>
+      <a href="#"><i class="fas fa-phone"></i> +123-456-7890</a>
+      <a href="#"><i class="fas fa-phone"></i> +111-222-3333</a>
+      <a href="#"><i class="fas fa-envelope"></i> coffee@gmail.com</a>
+      <a href="#"><i class="fas fa-map-marker-alt"></i> Perú, Lima</a>
+    </div>
+
+    <div class="box">
+      <h3>follow us</h3>
+      <a href="#"><i class="fab fa-facebook-f"></i> Facebook</a>
+      <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+      <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+      <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    </div>
+
+  </div>
+
+  <div class="credit">created by <span>Tejasree</span> | all rights reserved</div>
+</section>
+
+
+    <!-- SWIPER -->
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+    <!-- Custom JS File Link  -->
+    <script src="script.js"></script>
+    
+
+</body>
+
+</html>
